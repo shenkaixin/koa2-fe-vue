@@ -30,7 +30,9 @@
 </template>
 
 <script>
-// @ is an alias to /src
+import {
+  getUserList,
+} from '../apis/user'
 
 export default {
   name: 'home',
@@ -39,6 +41,15 @@ export default {
   data() {
     return {
       tableData: [],
+    }
+  },
+  mounted() {
+    this.getDetails()
+  },
+  methods: {
+    async getDetails() {
+      let r = await getUserList({})
+      this.tableData = _.get(r, 'data', [])
     }
   }
 }
