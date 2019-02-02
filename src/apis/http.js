@@ -21,7 +21,8 @@ instance.interceptors.request.use((config) => {
  * 响应拦截
  */
 instance.interceptors.response.use((response) => {
-  return response
+  let { data, } = response
+  return data
 }, (err) => {
   return Promise.reject(err)
 })

@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Home from './views/Home'
+import AddUser from './views/user/add'
+import UpdateUser from './views/user/update'
 
 Vue.use(Router)
 
@@ -10,6 +12,16 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home
+    },
+    {
+      path: '/addUser',
+      name: 'addUser',
+      component: AddUser
+    },
+    {
+      path: '/updateUser/:id',
+      name: 'updateUser',
+      component: UpdateUser
     },
     {
       path: '/about',
