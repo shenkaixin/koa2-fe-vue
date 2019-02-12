@@ -5,7 +5,7 @@ import Register from './views/register'
 import Home from './views/Home'
 import AddUser from './views/user/add'
 import UpdateUser from './views/user/update'
-import Movie from './views/movie-file/index'
+import Movie from './views/movie-file/Index'
 
 Vue.use(Router)
 
