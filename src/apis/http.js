@@ -12,6 +12,10 @@ let instance = axios.create({
  * 请求拦截
  */
 instance.interceptors.request.use((config) => {
+  const token = sessionStorage.getItem('token')
+  if (token) {
+    config.headers.common['Authorization'] = `Bearer ${token}`
+  }
   return config
 }, (err) => {
   return Promise.reject(err)
@@ -24,6 +28,20 @@ instance.interceptors.response.use((response) => {
   let { data, } = response
   return data
 }, (err) => {
+  if (err.response.status === 401) {
+    this.$msgBox.showMsgBox({
+      title: '错误提示',
+      content: '您的登录信息已失效，请重新登录',
+      isShowCancelBtn: false
+    }).then(() => {
+      this.$router.push('/login');
+    })
+  } else {
+    this.$message.showMessage({
+      type: 'error',
+      content: '系统出现错误'
+    });
+  }
   return Promise.reject(err)
 })
 
@@ -38,9 +56,9 @@ instance.interceptors.response.use((response) => {
 export default (method, url, data = null) => {
   method = method.toLowerCase()
   if (method == 'post') {
-    return instance.post(url, data)
+    return instance.post(url, data,)
   } else if (method == 'get') {
-    return instance.get(url, { params: data} )
+    return instance.get(url, { params: data},)
   } else if (method == 'delete') {
     return instance.delete(url, { params: data })
   } else if (method == 'put') {

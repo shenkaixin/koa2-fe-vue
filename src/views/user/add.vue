@@ -9,6 +9,13 @@
         label="用户名"
       >
         <el-input
+          v-model="addUserForm.userName"
+        />
+      </el-form-item>
+      <el-form-item
+        label="别名"
+      >
+        <el-input
           v-model="addUserForm.nickname"
         />
       </el-form-item>
@@ -59,6 +66,7 @@ export default {
   data () {
     return {
       addUserForm: {
+        userName: '',
         nickname: '',
         phoneNumber: '',
         avatar: '',

@@ -11,8 +11,12 @@
       style="width: 100%"
     >
       <el-table-column
-        prop="nickname"
+        prop="userName"
         label="用户名"
+      />
+      <el-table-column
+        prop="nickname"
+        label="别名"
       />
       <el-table-column
         prop="phoneNumber"

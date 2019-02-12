@@ -1,7 +1,7 @@
 import $ from './http'
 
 // 获取用户所有的信息
-export const getUserList = params => $('post', '/userList', params)
+export const getUserList = params => $('get', '/userList', params)
 
 // 用户id查找单个用户的信息
 export const getUserIdInfo = params => $('post', '/findIdUser', params)
