@@ -1,12 +1,12 @@
 <template>
   <div>
     <h2>爬虫数据</h2>
-    <el-table :data="tableData" border style="width: 100%">
-      <el-table-column prop="title" label="名称" />
-      <el-table-column prop="imgUrl" label="图片地址" />
-      <el-table-column prop="meta.createAt" label="开始时间" />
-      <el-table-column prop="meta.updateAt" label="更新时间" />
-    </el-table>
+    <common-table
+      :table-attrs="tableAttrs"
+      :table-column-data="tableColumnData"
+      :table-data="tableData"
+    >
+    </common-table>
     <el-pagination
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
@@ -19,12 +19,22 @@
 </template>
 
 <script>
-import { getMovieList } from '../../apis/movie'
 import _ from 'lodash'
+import { getMovieList } from '../../apis/movie'
+import CommonTable from '../../components/common-table/Index'
+import tableColumnData from './_consts/movie-file-column'
 
 export default {
+  name: 'MovieFile',
+  components: {
+    CommonTable,
+  },
   data() {
     return {
+      tableAttrs: {
+        border: true
+      },
+      tableColumnData,
       tableData: [],
       currentPage: 1,
       pageSize: 10,
