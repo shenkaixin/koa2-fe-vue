@@ -18,6 +18,12 @@ module.exports = {
     // productionSourceMap: false
   },
   chainWebpack: config => {
+    // 压缩
+    config.optimization.minimize(true)
+    // 分割
+    config.optimization.splitChunks({
+      chunks: 'all'
+    })
     // 压缩图片的
     config.module
       .rule('images')
