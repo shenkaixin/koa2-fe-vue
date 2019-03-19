@@ -21,7 +21,11 @@ import { login } from '../apis/login'
 import _ from 'lodash'
 
 export default {
+<<<<<<< HEAD
   data() {
+=======
+  data () {
+>>>>>>> 8cc0ca751e759ad8cbe66475acfd9dde815eeff3
     return {
       loginForm: {
         userName: '',
@@ -30,7 +34,11 @@ export default {
     }
   },
   methods: {
+<<<<<<< HEAD
     submit() {
+=======
+    submit () {
+>>>>>>> 8cc0ca751e759ad8cbe66475acfd9dde815eeff3
       this.$refs.loginFormRef.validate((valid) => {
         if (valid) {
           login(this.loginForm)

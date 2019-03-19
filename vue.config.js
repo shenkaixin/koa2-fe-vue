@@ -16,5 +16,31 @@ module.exports = {
     }
     // // source map文件
     // productionSourceMap: false
+<<<<<<< HEAD
   }
 }
+=======
+  },
+  chainWebpack: config => {
+    // 压缩
+    config.optimization.minimize(true)
+    // 分割
+    config.optimization.splitChunks({
+      chunks: 'all'
+    })
+    // 压缩图片的
+    config.module
+      .rule('images')
+      .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
+      .use('img-loader')
+      .loader('img-loader').options({
+        plugins: [
+          require('imagemin-jpegtran')(),
+          require('imagemin-pngquant')({
+            quality: [0.75, 0.85]
+          })
+        ]
+      })
+  }
+}
+>>>>>>> 8cc0ca751e759ad8cbe66475acfd9dde815eeff3

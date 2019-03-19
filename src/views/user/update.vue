@@ -34,7 +34,11 @@ import { updateUser, getUserIdInfo } from '../../apis/user'
 import _ from 'lodash'
 
 export default {
+<<<<<<< HEAD
   data() {
+=======
+  data () {
+>>>>>>> 8cc0ca751e759ad8cbe66475acfd9dde815eeff3
     return {
       addUserForm: {
         userName: '',
@@ -45,11 +49,19 @@ export default {
       }
     }
   },
+<<<<<<< HEAD
   mounted() {
     this.getDetails()
   },
   methods: {
     async getDetails() {
+=======
+  mounted () {
+    this.getDetails()
+  },
+  methods: {
+    async getDetails () {
+>>>>>>> 8cc0ca751e759ad8cbe66475acfd9dde815eeff3
       await getUserIdInfo({ id: this.$route.params.id })
         .then((r) => {
           if (r.code === 200) {
@@ -69,7 +81,11 @@ export default {
           })
         })
     },
+<<<<<<< HEAD
     onSubmit() {
+=======
+    onSubmit () {
+>>>>>>> 8cc0ca751e759ad8cbe66475acfd9dde815eeff3
       this.$refs.addUserRef.validate(async (valid) => {
         const params = Object.assign({}, this.addUserForm, {
           id: this.$route.params.id
