@@ -3,10 +3,9 @@ module.exports = {
   env: {
     node: true
   },
-<<<<<<< HEAD
   extends: [
     // 'plugin:vue/essential',
-    'eslint:recommended',
+    // 'eslint:recommended',
     '@vue/prettier'
   ],
   rules: {
@@ -260,21 +259,8 @@ module.exports = {
     // 'wrap-iife': [2, 'inside'], //立即执行函数表达式的小括号风格
     // 'wrap-regex': 0, //正则表达式字面量用小括号包起来
     // yoda: [2, 'never'] //禁止尤达条件
-=======
-  'extends': [
-    'plugin:vue/essential',
-    '@vue/standard'
-  ],
-  rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
->>>>>>> 8cc0ca751e759ad8cbe66475acfd9dde815eeff3
   },
   parserOptions: {
     parser: 'babel-eslint'
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 8cc0ca751e759ad8cbe66475acfd9dde815eeff3

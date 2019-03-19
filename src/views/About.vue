@@ -8,11 +8,7 @@
 
 <script>
 export default {
-<<<<<<< HEAD
-  data() {
-=======
   data () {
->>>>>>> 8cc0ca751e759ad8cbe66475acfd9dde815eeff3
     return {}
   }
 }

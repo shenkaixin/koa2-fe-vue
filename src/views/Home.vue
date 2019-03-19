@@ -38,32 +38,18 @@ import { getUserList, deleteUser } from '../apis/user'
 import _ from 'lodash'
 
 export default {
-<<<<<<< HEAD
-  name: 'home',
-  components: {},
-  data() {
-=======
   name: 'Home',
   components: {},
   data () {
->>>>>>> 8cc0ca751e759ad8cbe66475acfd9dde815eeff3
     return {
       tableData: []
     }
   },
-<<<<<<< HEAD
-  mounted() {
-    this.getDetails()
-  },
-  methods: {
-    async getDetails() {
-=======
   mounted () {
     this.getDetails()
   },
   methods: {
     async getDetails () {
->>>>>>> 8cc0ca751e759ad8cbe66475acfd9dde815eeff3
       await getUserList()
         .then((r) => {
           if (r.code === 200) {
@@ -83,11 +69,7 @@ export default {
           })
         })
     },
-<<<<<<< HEAD
-    handleDeleteUser(id) {
-=======
     handleDeleteUser (id) {
->>>>>>> 8cc0ca751e759ad8cbe66475acfd9dde815eeff3
       this.$confirm('确定删除本条用户数据？', '提示', {
         confirmButtonText: '确定',
         concelButtonText: '取消',

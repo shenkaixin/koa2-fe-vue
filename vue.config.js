@@ -16,10 +16,6 @@ module.exports = {
     }
     // // source map文件
     // productionSourceMap: false
-<<<<<<< HEAD
-  }
-}
-=======
   },
   chainWebpack: config => {
     // 压缩
@@ -43,4 +39,3 @@ module.exports = {
       })
   }
 }
->>>>>>> 8cc0ca751e759ad8cbe66475acfd9dde815eeff3

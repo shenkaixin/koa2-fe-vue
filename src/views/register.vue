@@ -20,11 +20,7 @@
 import { register } from '../apis/register'
 
 export default {
-<<<<<<< HEAD
-  data() {
-=======
   data () {
->>>>>>> 8cc0ca751e759ad8cbe66475acfd9dde815eeff3
     return {
       registerForm: {
         userName: '',
@@ -33,11 +29,7 @@ export default {
     }
   },
   methods: {
-<<<<<<< HEAD
-    submit() {
-=======
     submit () {
->>>>>>> 8cc0ca751e759ad8cbe66475acfd9dde815eeff3
       this.$refs.registerRef.validate((valid) => {
         if (valid) {
           console.log(this.registerForm, '表单数据')
