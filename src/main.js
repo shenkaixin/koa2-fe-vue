@@ -5,7 +5,7 @@ import store from './store'
 import router from './router'
 
 /* 重置样式 */
-// import './assets/css/normalize.less'
+import './assets/css/index.less'
 
 /* 饿了么组件 */
 import './plugins/element'
