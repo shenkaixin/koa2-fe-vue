@@ -16,10 +16,10 @@ export default {
       default: '暂无数据'
     }
   },
-  render () {
+  render() {
     let baseCfg = () => {
       return {
-        formatter (row, column) {
+        formatter(row, column) {
           return row[column.property] || '--'
         },
         'show-overflow-tooltip': true
@@ -28,7 +28,7 @@ export default {
 
     return (
       <el-table {...{ props: this.tableAttrs }} data={this.tableData}>
-        {this.tableColumnData.map(item => {
+        {this.tableColumnData.map((item) => {
           return item.slotName ? (
             this.$slots[item.slotName]
           ) : (

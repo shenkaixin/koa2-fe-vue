@@ -77,6 +77,6 @@ export default (method, url, data = null) => {
     return instance.put(url, data)
   }
   // eslint-disable-next-line
-    console.log(`未知的method ${method}`)
+  // console.log(`未知的method ${method}`)
   return false
 }

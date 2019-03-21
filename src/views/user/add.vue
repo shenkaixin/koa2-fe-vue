@@ -33,7 +33,7 @@
 import { addUser } from '../../apis/user'
 
 export default {
-  data () {
+  data() {
     return {
       addUserForm: {
         userName: '',
@@ -45,7 +45,7 @@ export default {
     }
   },
   methods: {
-    onSubmit () {
+    onSubmit() {
       this.$refs.addUserRef.validate(async (valid) => {
         if (valid) {
           addUser(this.addUserForm)

@@ -15,11 +15,11 @@ let config = {
 const handleAxios = axios.create(config)
 
 handleAxios.interceptors.request.use(
-  function (requestConfig) {
+  function(requestConfig) {
     // Do something before request is sent
     return requestConfig
   },
-  function (error) {
+  function(error) {
     // Do something with request error
     return Promise.reject(error)
   }
@@ -27,11 +27,11 @@ handleAxios.interceptors.request.use(
 
 // Add a response interceptor
 handleAxios.interceptors.response.use(
-  function (response) {
+  function(response) {
     // Do something with response data
     return response
   },
-  function (error) {
+  function(error) {
     // Do something with response error
     return Promise.reject(error)
   }
@@ -43,18 +43,18 @@ Plugin.install = function (Vue) {
   window.axios = handleAxios
   Object.defineProperties(Vue.prototype, {
     axios: {
-      get () {
+      get() {
         return handleAxios
       }
     },
     $axios: {
-      get () {
+      get() {
         return handleAxios
       }
     }
   })
 }
-
+// eslint-disable-next-line
 Vue.use(Plugin)
-
+// eslint-disable-next-line
 export default Plugin

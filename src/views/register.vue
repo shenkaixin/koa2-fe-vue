@@ -20,7 +20,7 @@
 import { register } from '../apis/register'
 
 export default {
-  data () {
+  data() {
     return {
       registerForm: {
         userName: '',
@@ -29,11 +29,11 @@ export default {
     }
   },
   methods: {
-    submit () {
+    submit() {
       this.$refs.registerRef.validate((valid) => {
         if (valid) {
-          console.log(this.registerForm, '表单数据')
-          console.log(register, 'registerApi')
+          // console.log(this.registerForm, '表单数据')
+          // console.log(register, 'registerApi')
           register(this.registerForm)
             .then((r) => {
               if (r.code === 200) {
@@ -52,7 +52,7 @@ export default {
               })
             })
         } else {
-          console.log('error submit!!')
+          // console.log('error submit!!')
           return false
         }
       })

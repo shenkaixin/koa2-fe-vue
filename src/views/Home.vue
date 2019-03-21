@@ -40,16 +40,16 @@ import _ from 'lodash'
 export default {
   name: 'Home',
   components: {},
-  data () {
+  data() {
     return {
       tableData: []
     }
   },
-  mounted () {
+  mounted() {
     this.getDetails()
   },
   methods: {
-    async getDetails () {
+    async getDetails() {
       await getUserList()
         .then((r) => {
           if (r.code === 200) {
@@ -69,7 +69,7 @@ export default {
           })
         })
     },
-    handleDeleteUser (id) {
+    handleDeleteUser(id) {
       this.$confirm('确定删除本条用户数据？', '提示', {
         confirmButtonText: '确定',
         concelButtonText: '取消',
