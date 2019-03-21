@@ -27,7 +27,7 @@ export default {
   components: {
     CommonTable
   },
-  data() {
+  data () {
     return {
       tableAttrs: {
         border: true
@@ -39,17 +39,17 @@ export default {
       total: 0
     }
   },
-  mounted() {
+  mounted () {
     this.getDetails()
   },
   methods: {
-    async getDetails() {
+    async getDetails () {
       const params = {
         currentPage: this.currentPage,
         pageSize: this.pageSize
       }
       await getMovieList(params)
-        .then((r) => {
+        .then(r => {
           if (r.code === 200) {
             this.tableData = _.get(r, 'data', [])
             this.total = _.get(r, 'total', 0)
@@ -59,19 +59,19 @@ export default {
             })
           }
         })
-        .catch((err) => {
+        .catch(err => {
           this.$message.success({
             message: err
           })
         })
     },
-    handleSizeChange(val) {
-      // console.log(`每页 ${val} 条`)
+    handleSizeChange (val) {
+      console.log(`每页 ${val} 条`)
       this.currentPage = val
       this.getDetails()
     },
-    handleCurrentChange(val) {
-      // console.log(`当前页: ${val}`)
+    handleCurrentChange (val) {
+      console.log(`当前页: ${val}`)
       this.currentPage = val
       this.getDetails()
     }
