@@ -31,6 +31,7 @@
 import { register } from '../../apis/register'
 
 export default {
+  name: 'Reg',
   data() {
     return {
       regForm: {

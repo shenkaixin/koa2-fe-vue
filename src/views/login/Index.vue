@@ -32,6 +32,7 @@ import { login } from '../../apis/login'
 import _ from 'lodash'
 
 export default {
+  name: 'Login',
   data() {
     return {
       loginForm: {
