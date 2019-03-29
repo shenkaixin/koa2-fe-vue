@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Login from './views/login/Index'
-import Register from './views/register'
+import Reg from './views/reg/Index'
 import Home from './views/Home'
 import AddUser from './views/user/add'
 import UpdateUser from './views/user/update'
@@ -41,9 +41,9 @@ export default new Router({
       component: Login
     },
     {
-      path: '/register',
-      name: 'register',
-      component: Register
+      path: '/reg',
+      name: 'reg',
+      component: Reg
     },
     {
       path: '/movie',

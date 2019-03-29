@@ -17,11 +17,12 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less">
+@import './assets/css/common.less';
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow: hidden;
 }
 </style>

@@ -1,25 +1,25 @@
 <template>
-  <div class="login-wrapper">
+  <div class="reg-wrapper">
     <el-row type="flex" justify="center" align="middle">
       <el-form
-        ref="loginFormRef"
+        ref="regFormRef"
         label-width="70px"
-        :model="loginForm"
+        :model="regForm"
         :rules="rules"
       >
         <el-col :span="24">
           <el-form-item label="用户名" prop="userName">
-            <el-input v-model="loginForm.userName" />
+            <el-input v-model="regForm.userName" />
           </el-form-item>
         </el-col>
         <el-col :span="24">
           <el-form-item label="密码" prop="psd">
-            <el-input v-model="loginForm.psd" />
+            <el-input v-model="regForm.psd" />
           </el-form-item>
         </el-col>
         <el-col :span="24">
           <el-button @click="submit">
-            登陆
+            注册
           </el-button>
         </el-col>
       </el-form>
@@ -28,13 +28,12 @@
 </template>
 
 <script>
-import { login } from '../../apis/login'
-import _ from 'lodash'
+import { register } from '../../apis/register'
 
 export default {
   data() {
     return {
-      loginForm: {
+      regForm: {
         userName: '',
         psd: ''
       },
@@ -58,16 +57,16 @@ export default {
   },
   methods: {
     submit() {
-      this.$refs.loginFormRef.validate((valid) => {
+      this.$refs.regFormRef.validate((valid) => {
         if (valid) {
-          login(this.loginForm)
+          // console.log(this.regForm, '表单数据')
+          // console.log(register, 'registerApi')
+          register(this.regForm)
             .then((r) => {
               if (r.code === 200) {
-                sessionStorage.setItem('token', _.get(r, 'token', ''))
                 this.$message.success({
                   message: r.message
                 })
-                this.$router.push('/')
               } else {
                 this.$message.error({
                   message: r.message
@@ -92,7 +91,7 @@ export default {
 <style lang="less">
 @import '../../assets/css/common.less';
 
-.login-wrapper {
+.reg-wrapper {
   text-align: center;
   height: 100vh;
   .el-row {
