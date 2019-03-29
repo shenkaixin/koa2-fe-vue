@@ -25,8 +25,8 @@ module.exports = {
     // 分割
     config.optimization.splitChunks({
       chunks: 'all',
-      minSize: 10000, //// 提高缓存利用率，这需要在http2/spdy
-      maxSize: 0, //没有限制
+      minSize: 10000, // 提高缓存利用率，这需要在http2/spdy
+      maxSize: 0, // 没有限制
       minChunks: 3, // 共享最少的chunk数，使用次数超过这个值才会被提取
       maxAsyncRequests: 5, //最多的异步chunk数
       maxInitialRequests: 5, // 最多的同步chunks数
@@ -54,7 +54,7 @@ module.exports = {
         },
         vue: {
           test({ resource }) {
-            return /[\\/]node_modules[\\/](react|redux)/.test(resource)
+            return /[\\/]node_modules[\\/](vue|vuex)/.test(resource)
           },
           name: 'vue',
           priority: 20,
