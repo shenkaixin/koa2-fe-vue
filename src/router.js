@@ -2,20 +2,17 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from './views/login/Index'
 import Reg from './views/reg/Index'
-import Home from './views/Home'
+import User from './views/user/Index'
 import AddUser from './views/user/add'
 import UpdateUser from './views/user/update'
 import Movie from './views/movie-file/Index'
+import Index from './views/Index'
+import Iframe from './views/iframe/Index'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Home
-    },
     {
       path: '/addUser',
       name: 'addUser',
@@ -49,6 +46,23 @@ export default new Router({
       path: '/movie',
       name: 'movie',
       component: Movie
+    },
+    {
+      path: '/',
+      name: 'index',
+      component: Index,
+      children: [
+        {
+          path: '/iframe/:path',
+          name: 'iframe',
+          component: Iframe
+        },
+        {
+          path: '/user',
+          name: 'user',
+          component: User
+        }
+      ]
     }
   ]
 })

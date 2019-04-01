@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import { getUserList, deleteUser } from '../apis/user'
+import { getUserList, deleteUser } from '../../apis/user'
 import _ from 'lodash'
 
 export default {
