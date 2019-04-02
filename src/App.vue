@@ -9,7 +9,7 @@
 // import Home from './views/Home'
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
     // HelloWorld
     // Home

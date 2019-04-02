@@ -1,13 +1,15 @@
 <template>
   <div>
     <el-upload action="/api//uploadFile">
-      <el-button size="small" type="primary">点击上传</el-button>
+      <el-button size="small" type="primary">
+        点击上传
+      </el-button>
     </el-upload>
     <el-radio-group v-model="radio">
       <el-radio
         v-for="item in items"
-        :label="item.value"
         :key="item.value"
+        :label="item.value"
         :disabled="item.value === '1'"
       >
         {{ item.label }}

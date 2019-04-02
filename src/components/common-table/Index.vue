@@ -3,13 +3,16 @@ export default {
   name: 'CommonTable',
   props: {
     tableAttrs: {
-      type: Object
+      type: Object,
+      default: Function
     },
     tableData: {
-      type: Array
+      type: Array,
+      default: Function
     },
     tableColumnData: {
-      type: Array
+      type: Array,
+      default: Function
     },
     emptyText: {
       type: String,
