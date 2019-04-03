@@ -1,6 +1,11 @@
 <template>
   <div class="home">
-    <el-button class="addBtn" type="primary" @click="$router.push('/addUser')">
+    <el-button
+      class="addBtn"
+      type="primary"
+      size="medium"
+      @click="$router.push('/addUser')"
+    >
       新增用户
     </el-button>
     <CommonTable

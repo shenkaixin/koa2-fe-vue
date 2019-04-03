@@ -18,24 +18,25 @@ export default {
     },
     emptyText: {
       type: String,
-      default: '暂无数据'
+      default: '数据走丢了'
     }
   },
   render() {
-    let baseCfg = () => {
-      return {
-        formatter(row, column) {
-          return row[column.property] || '--'
-        },
-        'show-overflow-tooltip': true
+    let baseCfg = {
+      formatter(row, column) {
+        return row[column.property] || '--'
       }
     }
 
     return (
-      <el-table {...{ props: this.tableAttrs }} data={this.tableData}>
+      <el-table
+        {...{ props: this.tableAttrs }}
+        data={this.tableData}
+        empty-text={this.emptyText}
+      >
         {this.tableColumnData.map((item) => {
           return item.slotName ? (
-            this.$slots[item.slotName]
+            this.$slots[item.slotName] || '--'
           ) : (
             <el-table-column
               show-overflow-tooltip

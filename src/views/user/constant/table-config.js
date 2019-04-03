@@ -1,6 +1,7 @@
 export default {
   tableAttrs: {
-    border: true
+    border: true,
+    stripe: true
   },
   tableColumnData: [
     {
