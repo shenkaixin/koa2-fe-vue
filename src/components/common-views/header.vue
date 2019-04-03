@@ -4,6 +4,7 @@
       我是logo
     </div>
     <div class="header-action">
+      <Theme class="picker-color" />
       <el-dropdown @command="handleCommand">
         <span>
           meiyu
@@ -24,8 +25,13 @@
 </template>
 
 <script>
+import Theme from '../theme/Index'
+
 export default {
   name: 'Header',
+  components: {
+    Theme
+  },
   data() {
     return {
       actions: [
@@ -68,7 +74,7 @@ export default {
   .header-action {
     display: flex;
     align-items: center;
-    .pickerColor {
+    .picker-color {
       margin: $marginHeight;
     }
   }
