@@ -1,47 +1,62 @@
 <template>
   <div class="home">
-    <el-button class="addBtn" @click="$router.push('/addUser')">
+    <el-button class="addBtn" type="primary" @click="$router.push('/addUser')">
       新增用户
     </el-button>
-    <el-table :data="tableData" border style="width: 100%">
-      <el-table-column prop="userName" label="用户名" />
-      <el-table-column prop="nickname" label="别名" />
-      <el-table-column prop="phoneNumber" label="手机号" />
-      <el-table-column prop="avatar" label="图片地址" />
-      <el-table-column prop="verifyCode" label="版本号" />
-      <el-table-column prop="accessToken" label="权限编号" />
-      <el-table-column prop="_id" label="用户Id" />
-      <el-table-column label="操作">
-        <template slot-scope="scope">
-          <el-button
-            type="text"
-            size="small"
-            @click="$router.push(`/updateUser/${scope.row._id}`)"
+    <CommonTable
+      :table-column-data="TableConfig.tableColumnData"
+      :table-data="tableData"
+      :table-attrs="TableConfig.tableAttrs"
+    >
+      <template
+        v-for="slot in TableConfig.tableColumnData.filter(
+          (item) => !!item.slotName
+        )"
+        :slot="slot.slotName"
+      >
+        <slot :name="`column-${slot.slotName}`">
+          <el-table-column
+            :label="slot.attrs.label"
+            :min-width="slot.attrs['min-width']"
           >
-            编辑
-          </el-button>
-          <el-button
-            type="text"
-            size="small"
-            @click="handleDeleteUser(scope.row._id)"
-          >
-            删除
-          </el-button>
-        </template>
-      </el-table-column>
-    </el-table>
+            <template slot-scope="scope">
+              <el-button
+                type="text"
+                size="small"
+                @click="$router.push(`/updateUser/${scope.row._id}`)"
+              >
+                编辑
+              </el-button>
+              <el-button
+                class="del"
+                type="text"
+                size="small"
+                @click="handleDeleteUser(scope.row._id)"
+              >
+                删除
+              </el-button>
+            </template>
+          </el-table-column>
+        </slot>
+      </template>
+    </CommonTable>
   </div>
 </template>
 
 <script>
-import { getUserList, deleteUser } from '../../apis/user'
 import _ from 'lodash'
+import CommonTable from '../../components/common-table/Index'
+import TableConfig from './constant/table-config'
+import { getUserList, deleteUser } from '../../apis/user'
 
 export default {
   name: 'Home',
-  components: {},
+  components: {
+    CommonTable
+  },
   data() {
     return {
+      TableConfig,
       tableData: []
     }
   },
@@ -100,7 +115,11 @@ export default {
 
 .home {
   .addBtn {
+    float: right;
     margin-bottom: @marginHeight;
+  }
+  .del {
+    color: var(--delFontColor);
   }
 }
 </style>

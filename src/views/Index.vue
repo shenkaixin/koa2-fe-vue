@@ -34,7 +34,7 @@
           </el-submenu>
         </el-menu>
       </el-aside>
-      <el-container class="container-left">
+      <el-container class="container-right">
         <el-main>
           <router-view />
         </el-main>
@@ -87,6 +87,9 @@ export default {
       ]
     }
   },
+  mounted() {
+    console.log(this.$route)
+  },
   methods: {
     handleOpen(key, keyPath) {
       console.log(key, keyPath)
@@ -124,7 +127,7 @@ export default {
   .container {
     height: calc(100vh - (@commonHeight * 2));
     padding: @commonPadding 0;
-    &-left {
+    &-right {
       background-color: var(--commonViewBgColor);
     }
   }

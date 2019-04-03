@@ -4,7 +4,9 @@ export default {
   props: {
     tableAttrs: {
       type: Object,
-      default: Function
+      default: function(val) {
+        return val
+      }
     },
     tableData: {
       type: Array,
