@@ -1,4 +1,4 @@
-# fe-vue-koa2
+# koa2-fe-vue
 
 ## Project setup
 ```

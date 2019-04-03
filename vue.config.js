@@ -1,24 +1,6 @@
 // const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 
 module.exports = {
-  devServer: {
-    // ip映射
-    proxy: {
-      '/api': {
-        target: 'http://localhost:3001/',
-        changOrigin: true
-      }
-    },
-    // eslint-loader在线上打包不使用
-    // lintOnSave: process.env.NODE_ENV !== 'production',
-    // // 强制使用eslint-loader
-    overlay: {
-      warnings: true,
-      errors: true
-    }
-    // // source map文件
-    // productionSourceMap: false
-  },
   // chainWebpack: (config) => {
   //   // 压缩
   //   config.optimization.minimize(true)
@@ -85,4 +67,24 @@ module.exports = {
   //       ]
   //     })
   // }
+  devServer: {
+    // ip映射
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3001/',
+        changOrigin: true
+      }
+    },
+    // eslint-loader在线上打包不使用
+    // lintOnSave: process.env.NODE_ENV !== 'production',
+    // // 强制使用eslint-loader
+    overlay: {
+      warnings: true,
+      errors: true
+    }
+    // // source map文件
+    // productionSourceMap: false
+  },
+
+  lintOnSave: undefined
 }

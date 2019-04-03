@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>新增用户</h2>
-    <el-form :model="addUserForm" ref="addUserRef">
+    <el-form ref="addUserRef" :model="addUserForm">
       <el-form-item label="用户名">
         <el-input v-model="addUserForm.userName" />
       </el-form-item>

@@ -5,14 +5,14 @@
       :table-attrs="tableAttrs"
       :table-column-data="tableColumnData"
       :table-data="tableData"
-    ></common-table>
+    />
     <el-pagination
-      @size-change="handleSizeChange"
-      @current-change="handleCurrentChange"
       :current-page="currentPage"
       :page-size="pageSize"
-      layout="total, prev, pager, next, jumper"
       :total="total"
+      layout="total, prev, pager, next, jumper"
+      @size-change="handleSizeChange"
+      @current-change="handleCurrentChange"
     />
   </div>
 </template>

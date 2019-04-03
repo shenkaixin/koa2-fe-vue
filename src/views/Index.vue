@@ -34,7 +34,7 @@
           </el-submenu>
         </el-menu>
       </el-aside>
-      <el-container>
+      <el-container class="container-left">
         <el-main>
           <router-view />
         </el-main>
@@ -123,6 +123,10 @@ export default {
   }
   .container {
     height: calc(100vh - (@commonHeight * 2));
+    padding: @commonPadding 0;
+    &-left {
+      background-color: var(--commonViewBgColor);
+    }
   }
   overflow: hidden;
 }
