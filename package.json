@@ -27,10 +27,11 @@
     "eslint-plugin-vue": "^5.0.0",
     "imagemin-jpegtran": "^6.0.0",
     "imagemin-pngquant": "^7.0.0",
-    "less": "^3.9.0",
-    "less-loader": "^4.1.0",
     "loadsh": "^0.0.4",
     "lodash-webpack-plugin": "^0.11.5",
+    "node-sass": "^4.11.0",
+    "sass": "^1.17.3",
+    "sass-loader": "^7.1.0",
     "vue-cli-plugin-axios": "^0.0.4",
     "vue-cli-plugin-element": "^1.0.1",
     "vue-template-compiler": "^2.5.21"

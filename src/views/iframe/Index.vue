@@ -22,7 +22,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="scss">
 .iframe-wrapper {
   iframe {
     width: 100%;

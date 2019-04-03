@@ -13,14 +13,14 @@ export default {
 }
 </script>
 
-<style lang="less">
-@import '../../assets/css/common.less';
+<style lang="scss">
+@import '../../assets/css/common.scss';
 
 .footer-wrapper {
   display: table-cell;
   vertical-align: middle;
   width: 100vw;
-  height: @commonHeight;
+  height: $commonHeight;
 
   text-align: center;
   border-top: 1px solid var(--borderColor);

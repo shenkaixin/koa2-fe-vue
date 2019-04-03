@@ -8,21 +8,12 @@ import UpdateUser from './views/user/update'
 import Movie from './views/movie-file/Index'
 import Index from './views/Index'
 import Iframe from './views/iframe/Index'
+import ElementComponent from './views/element-component/Index'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/addUser',
-      name: 'addUser',
-      component: AddUser
-    },
-    {
-      path: '/updateUser/:id',
-      name: 'updateUser',
-      component: UpdateUser
-    },
     {
       path: '/about',
       name: 'about',
@@ -61,8 +52,23 @@ export default new Router({
           path: '/user',
           name: 'user',
           component: User
+        },
+        {
+          path: '/addUser',
+          name: 'addUser',
+          component: AddUser
+        },
+        {
+          path: '/element-component/:path',
+          name: 'elementComponent',
+          component: ElementComponent
         }
       ]
+    },
+    {
+      path: '/updateUser/:id',
+      name: 'updateUser',
+      component: UpdateUser
     }
   ]
 })

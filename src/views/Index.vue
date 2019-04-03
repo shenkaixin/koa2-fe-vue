@@ -83,6 +83,25 @@ export default {
               query: '/https%3A%2F%2Fwww.baidu.com'
             }
           ]
+        },
+        {
+          menuName: 'ElementUI组件',
+          iconName: 'el-icon-document',
+          key: '3',
+          metaList: [
+            {
+              menuName: '单选框',
+              key: '3-1',
+              path: '/element-component',
+              query: '/radio'
+            },
+            {
+              menuName: '多选框',
+              key: '3-2',
+              path: '/element-component',
+              query: '/checkBox'
+            }
+          ]
         }
       ]
     }
@@ -102,7 +121,6 @@ export default {
     },
     handleMenuItem(item) {
       if (item.query) {
-        console.log(item)
         this.$router.push({
           path: `${item.path}${item.query}`
         })
@@ -116,8 +134,8 @@ export default {
 }
 </script>
 
-<style lang="less">
-@import '../assets/css/common.less';
+<style lang="scss">
+@import '../assets/css/common.scss';
 
 .index-wrapper {
   .el-header,
@@ -125,8 +143,8 @@ export default {
     padding: 0;
   }
   .container {
-    height: calc(100vh - (@commonHeight * 2));
-    padding: @commonPadding 0;
+    height: calc(100vh - ($commonHeight * 2));
+    padding: $commonPadding 0;
     &-right {
       background-color: var(--commonViewBgColor);
     }

@@ -17,8 +17,8 @@ export default {
 }
 </script>
 
-<style lang="less">
-@import './assets/css/common.less';
+<style lang="scss">
+@import './assets/css/common.scss';
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

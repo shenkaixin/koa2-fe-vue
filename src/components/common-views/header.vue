@@ -4,7 +4,6 @@
       我是logo
     </div>
     <div class="header-action">
-      <div />
       <el-dropdown @command="handleCommand">
         <span>
           meiyu
@@ -41,7 +40,6 @@ export default {
     handleCommand(command) {
       switch (command) {
         case '1':
-          console.log(command, 'command')
           this.$router.push({
             path: '/login'
           })
@@ -55,17 +53,24 @@ export default {
 }
 </script>
 
-<style lang="less">
-@import '../../assets/css/common.less';
+<style lang="scss">
+@import '../../assets/css/common.scss';
 
 .header-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: @commonHeight;
-  padding: 0 @commonPadding;
+  height: $commonHeight;
+  padding: 0 $commonPadding;
 
   color: var(--color);
   border-bottom: 1px solid var(--borderColor);
+  .header-action {
+    display: flex;
+    align-items: center;
+    .pickerColor {
+      margin: $marginHeight;
+    }
+  }
 }
 </style>
