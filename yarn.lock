@@ -5234,6 +5234,11 @@ js-base64@^2.1.8:
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.5.1.tgz#1efa39ef2c5f7980bb1784ade4a8af2de3291121"
   integrity sha512-M7kLczedRMYX4L8Mdh4MzyAMM9O5osx+4FcOQuTvr3A9F2D9S5JXheN0ewNbrvK2UatkTRhL5ejGmGSjNMiZuw==
 
+js-cookie@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/js-cookie/-/js-cookie-2.2.0.tgz#1b2c279a6eece380a12168b92485265b35b1effb"
+  integrity sha1-Gywnmm7s44ChIWi5JIUmWzWx7/s=
+
 js-levenshtein@^1.1.3:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/js-levenshtein/-/js-levenshtein-1.1.6.tgz#c6cee58eb3550372df8deb85fad5ce66ce01d59d"
@@ -9069,6 +9074,11 @@ vue-hot-reload-api@^2.3.0:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.2.tgz#1fcc1495effe08a790909b46bf7b5c4cfeb6f21b"
   integrity sha512-NpznMQoe/DzMG7nJjPkJKT7FdEn9xXfnntG7POfTmqnSaza97ylaBf1luZDh4IgV+vgUoR//id5pf8Ru+Ym+0g==
+
+vue-i18n@^8.10.0:
+  version "8.10.0"
+  resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-8.10.0.tgz#e95f215b5548bedf5610c14506acb3438717b6bd"
+  integrity sha512-n2A9Q5dbwk3q4r6cOdT5jJaMb/mV4JtkNmgSiUNtoDp+N00bQHzpALM2XRyNzu7WZSHyi10/wBrNKl0unNKpVg==
 
 vue-loader@^15.6.2:
   version "15.6.4"

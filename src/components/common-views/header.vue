@@ -16,7 +16,7 @@
           :key="index"
         >
           <el-dropdown-item :key="item.key" :command="item.key">
-            {{ item.label }}
+            {{ item.label | placeholder }}
           </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>

@@ -1,8 +1,8 @@
 import Vue from 'vue'
-import './plugins/axios'
 import App from './App.vue'
 import store from './store'
 import router from './router'
+import './plugins/axios'
 
 /* 重置样式 */
 import './assets/css/index.scss'
