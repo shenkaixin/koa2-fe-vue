@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <el-button @click="$router.push('/addUser')">
+    <el-button class="addBtn" @click="$router.push('/addUser')">
       新增用户
     </el-button>
     <el-table :data="tableData" border style="width: 100%">
@@ -94,3 +94,13 @@ export default {
   }
 }
 </script>
+
+<style lang="less">
+@import '../../assets/css/common.less';
+
+.home {
+  .addBtn {
+    margin-bottom: @marginHeight;
+  }
+}
+</style>
