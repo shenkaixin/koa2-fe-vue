@@ -3,75 +3,45 @@
     <h2 class="title">
       新增用户
     </h2>
-    <el-form ref="addUserRef" :model="addUserForm" label-width="70px">
-      <el-form-item label="用户名">
-        <el-input v-model="addUserForm.userName" />
-      </el-form-item>
-      <el-form-item label="别名">
-        <el-input v-model="addUserForm.nickname" />
-      </el-form-item>
-      <el-form-item label="手机号">
-        <el-input v-model="addUserForm.phoneNumber" />
-      </el-form-item>
-      <el-form-item label="图片地址">
-        <el-input v-model="addUserForm.avatar" />
-      </el-form-item>
-      <el-form-item label="版本号">
-        <el-input v-model="addUserForm.verifyCode" />
-      </el-form-item>
-      <el-form-item>
-        <el-button type="primary" @click="onSubmit">
-          添加用户
-        </el-button>
-        <el-button @click="$router.go(-1)">
-          返回列表
-        </el-button>
-      </el-form-item>
-    </el-form>
+    <common-form :form-item="FormItems" @save="handleSave" />
   </div>
 </template>
 
 <script>
 import { addUser } from '../../apis/user'
+import CommonForm from '../../components/common-form/Inde'
+import FormItems from './constant/form-item'
 
 export default {
+  name: 'AddUser',
+  components: {
+    CommonForm
+  },
   data() {
     return {
-      addUserForm: {
-        userName: '',
-        nickname: '',
-        phoneNumber: '',
-        avatar: '',
-        verifyCode: ''
-      }
+      FormItems
     }
   },
   methods: {
-    onSubmit() {
-      this.$refs.addUserRef.validate(async (valid) => {
-        if (valid) {
-          addUser(this.addUserForm)
-            .then((r) => {
-              if (r.code === 0) {
-                this.$message.success({
-                  message: r.message
-                })
-                this.$router.push('/')
-              } else {
-                this.$message.error({
-                  message: r.message
-                })
-              }
+    handleSave(form) {
+      addUser(form)
+        .then((r) => {
+          if (r.code === 0) {
+            this.$message.success({
+              message: r.message
             })
-            .catch((err) => {
-              this.$message.error({
-                message: err
-              })
+            this.$router.push('/user')
+          } else {
+            this.$message.error({
+              message: r.message
             })
-        } else {
-          return false
-        }
-      })
+          }
+        })
+        .catch((err) => {
+          this.$message.error({
+            message: err
+          })
+        })
     }
   }
 }

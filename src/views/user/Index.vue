@@ -8,7 +8,7 @@
     >
       新增用户
     </el-button>
-    <CommonTable
+    <common-table
       :table-column-data="TableConfig.tableColumnData"
       :table-data="tableData"
       :table-attrs="TableConfig.tableAttrs"
@@ -51,7 +51,7 @@
           </el-table-column>
         </slot>
       </template>
-    </CommonTable>
+    </common-table>
   </div>
 </template>
 
