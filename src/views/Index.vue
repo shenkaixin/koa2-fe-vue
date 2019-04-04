@@ -17,6 +17,7 @@
             :index="item.key"
           >
             <span slot="title">
+              <i :class="item.iconName" />
               {{ item.menuName }}
             </span>
             <el-menu-item-group>
@@ -27,6 +28,7 @@
                   :index="m.key"
                   @click="handleMenuItem(m)"
                 >
+                  <i :class="m.iconName" />
                   {{ m.menuName }}
                 </el-menu-item>
               </template>
@@ -61,11 +63,12 @@ export default {
       menuList: [
         {
           menuName: '用户',
-          iconName: 'el-icon-service',
+          iconName: 'el-icon-setting',
           key: '1',
           metaList: [
             {
               menuName: '用户列表',
+              iconName: 'el-icon-document',
               key: '1-1',
               path: '/user'
             }
@@ -73,11 +76,12 @@ export default {
         },
         {
           menuName: '外部链接',
-          iconName: 'el-icon-document',
+          iconName: 'el-icon-more',
           key: '2',
           metaList: [
             {
               menuName: '百度',
+              iconName: 'el-icon-document',
               key: '2-1',
               path: '/iframe',
               query: '/https%3A%2F%2Fwww.baidu.com'
@@ -85,36 +89,41 @@ export default {
           ]
         },
         {
-          menuName: 'ElementUI组件',
-          iconName: 'el-icon-document',
+          menuName: '组件',
+          iconName: 'el-icon-menu',
           key: '3',
           metaList: [
             {
               menuName: '单选框',
+              iconName: 'el-icon-document',
               key: '3-1',
               path: '/element-component',
               query: '/radio'
             },
             {
               menuName: '多选框',
+              iconName: 'el-icon-document',
               key: '3-2',
               path: '/element-component',
               query: '/checkBox'
             },
             {
               menuName: '下拉选择框',
+              iconName: 'el-icon-document',
               key: '3-3',
               path: '/element-component',
               query: '/selectView'
             },
             {
               menuName: '级联选择器',
+              iconName: 'el-icon-document',
               key: '3-4',
               path: '/element-component',
               query: '/cascader'
             },
             {
               menuName: '上传',
+              iconName: 'el-icon-document',
               key: '3-5',
               path: '/element-component',
               query: '/upload'
@@ -122,12 +131,13 @@ export default {
           ]
         },
         {
-          menuName: 'eCharts',
-          iconName: 'el-icon-document',
+          menuName: '图表',
+          iconName: 'el-icon-tickets',
           key: '4',
           metaList: [
             {
-              menuName: 'eCharts/Bld',
+              menuName: '折线图',
+              iconName: 'el-icon-document',
               key: '4-1',
               path: '/eCharts',
               query: '/Bld'

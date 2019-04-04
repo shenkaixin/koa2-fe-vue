@@ -1,5 +1,6 @@
 export default {
   header: {
-    logo: "I'm a logo"
+    logo: "I'm a logo",
+    loginOut: 'login out'
   }
 }

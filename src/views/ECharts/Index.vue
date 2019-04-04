@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Bld from './Bld.vue'
+import Bld from './Bld'
 
 export default {
   name: 'ECharts',

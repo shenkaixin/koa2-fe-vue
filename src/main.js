@@ -14,10 +14,13 @@ import './plugins/element'
 /* 全局过滤器 */
 import './filters/index'
 
+import { i18n } from './plugins/element'
+
 Vue.config.productionTip = false
 
 new Vue({
   store,
   router,
+  i18n,
   render: (h) => h(App)
 }).$mount('#app')
