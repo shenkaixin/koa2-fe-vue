@@ -85,6 +85,5 @@ module.exports = {
     // // source map文件
     // productionSourceMap: false
   },
-
   lintOnSave: undefined
 }

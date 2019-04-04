@@ -1,5 +1,6 @@
 <template>
   <div class="radio-wrapper">
+    <h2>Radio</h2>
     <el-radio
       v-for="(item, index) in items"
       :key="index"
@@ -13,6 +14,7 @@
 
 <script>
 export default {
+  name: 'Radio',
   data() {
     return {
       radio: '',

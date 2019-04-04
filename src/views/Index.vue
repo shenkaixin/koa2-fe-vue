@@ -100,6 +100,24 @@ export default {
               key: '3-2',
               path: '/element-component',
               query: '/checkBox'
+            },
+            {
+              menuName: '下拉选择框',
+              key: '3-3',
+              path: '/element-component',
+              query: '/selectView'
+            },
+            {
+              menuName: '级联选择器',
+              key: '3-4',
+              path: '/element-component',
+              query: '/cascader'
+            },
+            {
+              menuName: '上传',
+              key: '3-5',
+              path: '/element-component',
+              query: '/upload'
             }
           ]
         }

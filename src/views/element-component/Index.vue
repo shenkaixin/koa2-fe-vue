@@ -7,12 +7,18 @@
 <script>
 import Radio from './Radio'
 import CheckBox from './CheckBox'
+import Select from './Select'
+import Cascader from './Cascader'
+import Upload from './Upload'
 
 export default {
   name: 'ElementComponent',
   components: {
     Radio,
-    CheckBox
+    CheckBox,
+    selectView: Select,
+    Cascader,
+    Upload
   },
   data() {
     return {
@@ -24,6 +30,7 @@ export default {
       handler: function(val) {
         if (val.params) {
           const { path } = val.params
+          console.log(path, 'path')
           this.activeTab = path
         }
       },
