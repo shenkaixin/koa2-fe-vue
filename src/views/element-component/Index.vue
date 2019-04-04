@@ -30,7 +30,6 @@ export default {
       handler: function(val) {
         if (val.params) {
           const { path } = val.params
-          console.log(path, 'path')
           this.activeTab = path
         }
       },

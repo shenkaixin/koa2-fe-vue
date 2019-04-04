@@ -51,7 +51,6 @@ export default {
           })
           break
         default:
-          console.log(111)
           break
       }
     }

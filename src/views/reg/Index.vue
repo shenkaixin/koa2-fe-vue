@@ -60,8 +60,6 @@ export default {
     submit() {
       this.$refs.regFormRef.validate((valid) => {
         if (valid) {
-          // console.log(this.regForm, '表单数据')
-          // console.log(register, 'registerApi')
           register(this.regForm)
             .then((r) => {
               if (r.code === 200) {
@@ -80,7 +78,6 @@ export default {
               })
             })
         } else {
-          // console.log('error submit!!')
           return false
         }
       })

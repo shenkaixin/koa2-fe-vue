@@ -13,7 +13,6 @@ export default {
     }
   },
   created: function() {
-    console.log(this.$route.params, 'params')
     const {
       params: { path }
     } = this.$route

@@ -120,12 +120,22 @@ export default {
               query: '/upload'
             }
           ]
+        },
+        {
+          menuName: 'eCharts',
+          iconName: 'el-icon-document',
+          key: '4',
+          metaList: [
+            {
+              menuName: 'eCharts/Bld',
+              key: '4-1',
+              path: '/eCharts',
+              query: '/Bld'
+            }
+          ]
         }
       ]
     }
-  },
-  mounted() {
-    console.log(this.$route)
   },
   methods: {
     handleOpen(key, keyPath) {

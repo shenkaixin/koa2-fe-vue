@@ -10,6 +10,7 @@ import Movie from './views/movie-file/Index'
 import Index from './views/Index'
 import Iframe from './views/iframe/Index'
 import ElementComponent from './views/element-component/Index'
+import ECharts from './views/ECharts/Index'
 
 Vue.use(Router)
 
@@ -68,6 +69,11 @@ export default new Router({
           path: '/element-component/:path',
           name: 'elementComponent',
           component: ElementComponent
+        },
+        {
+          path: '/eCharts/:path',
+          name: 'eCharts',
+          component: ECharts
         }
       ]
     },
