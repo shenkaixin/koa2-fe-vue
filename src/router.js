@@ -5,6 +5,7 @@ import Reg from './views/reg/Index'
 import User from './views/user/Index'
 import AddUser from './views/user/add'
 import UpdateUser from './views/user/update'
+import UpdateUserTree from './views/user/updateUserTree'
 import Movie from './views/movie-file/Index'
 import Index from './views/Index'
 import Iframe from './views/iframe/Index'
@@ -57,6 +58,11 @@ export default new Router({
           path: '/addUser',
           name: 'addUser',
           component: AddUser
+        },
+        {
+          path: '/updateUserTree/:id',
+          name: 'updateUserTree',
+          component: UpdateUserTree
         },
         {
           path: '/element-component/:path',

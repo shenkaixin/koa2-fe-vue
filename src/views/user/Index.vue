@@ -28,6 +28,13 @@
               <el-button
                 type="text"
                 size="small"
+                @click="$router.push(`/updateUserTree/${scope.row._id}`)"
+              >
+                权限
+              </el-button>
+              <el-button
+                type="text"
+                size="small"
                 @click="$router.push(`/updateUser/${scope.row._id}`)"
               >
                 编辑
