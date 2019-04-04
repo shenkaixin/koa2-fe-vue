@@ -3,6 +3,7 @@ import App from './App.vue'
 import store from './store'
 import router from './router'
 import './plugins/axios'
+import './assets/iconfont/iconfont'
 
 /* 重置样式 */
 import './assets/css/index.scss'

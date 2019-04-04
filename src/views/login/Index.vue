@@ -28,8 +28,8 @@
 </template>
 
 <script>
-import { login } from '../../apis/login'
 import _ from 'lodash'
+import { login } from '../../apis/login'
 
 export default {
   name: 'Login',
