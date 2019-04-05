@@ -28,5 +28,8 @@ export default {
       _id: 'userId',
       operate: 'operate'
     }
+  },
+  footer: {
+    des: "I'm Little Tail"
   }
 }

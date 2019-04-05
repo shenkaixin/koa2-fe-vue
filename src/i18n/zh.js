@@ -28,5 +28,8 @@ export default {
       _id: '用户Id',
       operate: '操作'
     }
+  },
+  footer: {
+    des: '我是小尾巴'
   }
 }

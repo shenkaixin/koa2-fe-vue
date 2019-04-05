@@ -1,6 +1,6 @@
 <template>
   <div class="footer-wrapper">
-    这是一个vue项目的尾部说明
+    {{ $t('footer.des') }}
   </div>
 </template>
 
