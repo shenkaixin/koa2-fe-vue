@@ -12,6 +12,7 @@
       :table-column-data="TableConfig.tableColumnData"
       :table-data="tableData"
       :table-attrs="TableConfig.tableAttrs"
+      :table-language="TableConfig.tableLanguage"
     >
       <template
         v-for="slot in TableConfig.tableColumnData.filter(
@@ -21,7 +22,7 @@
       >
         <slot :name="`column-${slot.slotName}`">
           <el-table-column
-            :label="slot.attrs.label"
+            :label="$t('content.userList.operate')"
             :min-width="slot.attrs['min-width']"
           >
             <template slot-scope="scope">

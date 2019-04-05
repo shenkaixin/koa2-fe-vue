@@ -14,7 +14,6 @@
             v-for="item in messages"
             :key="item.key"
             :command="item.key"
-            :disabled="item.key === langText.key"
           >
             {{ item.label | placeholder }}
           </el-dropdown-item>

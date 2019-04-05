@@ -5,12 +5,7 @@
     </el-header>
     <el-container class="container">
       <el-aside width="280px">
-        <el-menu
-          class="el-menu-vertical-demo"
-          @open="handleOpen"
-          @close="handleClose"
-          @select="handleSelect"
-        >
+        <el-menu class="el-menu-vertical-demo">
           <el-submenu
             v-for="(item, index) in menuList"
             :key="index"
@@ -147,16 +142,17 @@ export default {
       ]
     }
   },
+  computed: {
+    language() {
+      return this.$store.getters.language
+    }
+  },
+  watch: {
+    language() {
+      this.formatLanguage()
+    }
+  },
   methods: {
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath)
-    },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath)
-    },
-    handleSelect(key, keyPath) {
-      console.log(key, keyPath)
-    },
     handleMenuItem(item) {
       if (item.query) {
         this.$router.push({
@@ -167,6 +163,95 @@ export default {
           path: item.path
         })
       }
+    },
+    // 切换语言
+    formatLanguage() {
+      console.log(this.$t('content.leftNav.userName'), 'ddadadada')
+      this.menuList = [
+        {
+          menuName: this.$t('content.leftNav.userName'),
+          iconName: 'el-icon-setting',
+          key: '1',
+          metaList: [
+            {
+              menuName: this.$t('content.leftNav.userList'),
+              iconName: 'el-icon-document',
+              key: '1-1',
+              path: '/user'
+            }
+          ]
+        },
+        {
+          menuName: this.$t('content.leftNav.link'),
+          iconName: 'el-icon-more',
+          key: '2',
+          metaList: [
+            {
+              menuName: this.$t('content.leftNav.baidu'),
+              iconName: 'el-icon-document',
+              key: '2-1',
+              path: '/iframe',
+              query: '/https%3A%2F%2Fwww.baidu.com'
+            }
+          ]
+        },
+        {
+          menuName: this.$t('content.leftNav.component'),
+          iconName: 'el-icon-menu',
+          key: '3',
+          metaList: [
+            {
+              menuName: this.$t('content.leftNav.radio'),
+              iconName: 'el-icon-document',
+              key: '3-1',
+              path: '/element-component',
+              query: '/radio'
+            },
+            {
+              menuName: this.$t('content.leftNav.checkbox'),
+              iconName: 'el-icon-document',
+              key: '3-2',
+              path: '/element-component',
+              query: '/checkBox'
+            },
+            {
+              menuName: this.$t('content.leftNav.select'),
+              iconName: 'el-icon-document',
+              key: '3-3',
+              path: '/element-component',
+              query: '/selectView'
+            },
+            {
+              menuName: this.$t('content.leftNav.cascader'),
+              iconName: 'el-icon-document',
+              key: '3-4',
+              path: '/element-component',
+              query: '/cascader'
+            },
+            {
+              menuName: this.$t('content.leftNav.upload'),
+              iconName: 'el-icon-document',
+              key: '3-5',
+              path: '/element-component',
+              query: '/upload'
+            }
+          ]
+        },
+        {
+          menuName: this.$t('content.leftNav.eCharts'),
+          iconName: 'el-icon-tickets',
+          key: '4',
+          metaList: [
+            {
+              menuName: this.$t('content.leftNav.line'),
+              iconName: 'el-icon-document',
+              key: '4-1',
+              path: '/eCharts',
+              query: '/Bld'
+            }
+          ]
+        }
+      ]
     }
   }
 }
