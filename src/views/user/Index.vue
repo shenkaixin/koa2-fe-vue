@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div v-loading="loading" class="home">
     <el-button
       class="addBtn"
       type="primary"
@@ -70,7 +70,8 @@ export default {
   data() {
     return {
       TableConfig,
-      tableData: []
+      tableData: [],
+      loading: true
     }
   },
   mounted() {
@@ -95,6 +96,9 @@ export default {
           this.$message.success({
             message: err
           })
+        })
+        .finally(() => {
+          this.loading = false
         })
     },
     handleDeleteUser(id) {

@@ -32,12 +32,38 @@
         </template>
         <template v-else-if="item.type === 'cascader'">
           <el-cascader
-            ref="cascader"
             v-model="form[item.model]"
-            :options="item.options"
+            class="cascader-wrapper"
+            :options="item.cascaderOptions"
             :props="item.props || cascaderProps"
+            :placeholder="`请填写${item.label}`"
             @change="handleCascaderItemChange"
           />
+        </template>
+        <template v-else-if="item.type === 'radio'">
+          <el-radio-group v-model="form[item.model]">
+            <el-radio
+              v-for="radio in item.radioOptions"
+              :key="radio.value"
+              :label="radio.value"
+            >
+              {{ radio.label }}
+            </el-radio>
+          </el-radio-group>
+        </template>
+        <template v-else-if="item.type === 'select'">
+          <el-select
+            v-model="form[item.model]"
+            class="select-wrapper"
+            :placeholder="`请选择${item.label}`"
+          >
+            <el-option
+              v-for="select in item.selectOptions"
+              :key="select.value"
+              :label="select.label"
+              :value="select.value"
+            />
+          </el-select>
         </template>
       </el-form-item>
       <el-form-item>
@@ -130,3 +156,12 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.common-form {
+  .cascader-wrapper,
+  .select-wrapper {
+    width: 100%;
+  }
+}
+</style>

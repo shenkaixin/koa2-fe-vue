@@ -39,6 +39,7 @@ export default {
     return (
       <el-table
         {...{ props: this.tableAttrs }}
+        v-loading={this.tableAttrs.loading}
         data={this.tableData}
         empty-text={this.emptyText}
       >

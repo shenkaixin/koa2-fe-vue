@@ -1,5 +1,5 @@
 <template>
-  <div class="add-user-wrapper">
+  <div v-loading="loading" class="add-user-wrapper">
     <h2 class="title">
       新增用户
     </h2>
@@ -19,11 +19,13 @@ export default {
   },
   data() {
     return {
-      FormItems
+      FormItems,
+      loading: false
     }
   },
   methods: {
     handleSave(form) {
+      this.loading = true
       addUser(form)
         .then((r) => {
           if (r.code === 0) {
@@ -41,6 +43,9 @@ export default {
           this.$message.error({
             message: err
           })
+        })
+        .finally(() => {
+          this.loading = false
         })
     }
   }
