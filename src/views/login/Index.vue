@@ -64,7 +64,7 @@ export default {
           login(this.loginForm)
             .then((r) => {
               if (r.code === 200) {
-                sessionStorage.setItem('token', _.get(r, 'token', ''))
+                sessionStorage.setItem('token', _.get(r.data, 'token', ''))
                 this.$message.success({
                   message: r.message
                 })
