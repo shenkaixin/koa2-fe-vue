@@ -1,4 +1,11 @@
 import Vue from 'vue'
+import VueI18n from 'vue-i18n'
+import elementEnLocale from 'element-ui/lib/locale/lang/en'
+import elementZhLocale from 'element-ui/lib/locale/lang/zh-CN'
+import enLocale from '../i18n/en'
+import zhLocale from '../i18n/zh'
+import Cookies from 'js-cookie'
+
 import {
   Pagination,
   Dialog,
@@ -68,6 +75,20 @@ import {
   Message,
   Notification
 } from 'element-ui'
+
+/* 国际化 */
+Vue.use(VueI18n)
+
+export const messages = {
+  en: {
+    ...enLocale,
+    ...elementEnLocale
+  },
+  zh: {
+    ...zhLocale,
+    ...elementZhLocale
+  }
+}
 
 Vue.use(Pagination)
 Vue.use(Dialog)
@@ -142,3 +163,24 @@ Vue.prototype.$confirm = MessageBox.confirm
 Vue.prototype.$prompt = MessageBox.prompt
 Vue.prototype.$notify = Notification
 Vue.prototype.$message = Message
+
+export function getLanguage() {
+  const chooseLanguage = Cookies.get('language')
+  if (chooseLanguage) return chooseLanguage
+
+  const language = (
+    navigator.language || navigator.browserLanguage
+  ).toLowerCase()
+  const locales = Object.keys(messages)
+  for (const locale of locales) {
+    if (language.includes(locale)) {
+      return locale
+    }
+  }
+  return 'en'
+}
+
+export const i18n = new VueI18n({
+  locale: getLanguage(), // set locale
+  messages // set locale messages
+})

@@ -3,6 +3,7 @@ export default {
     border: true,
     stripe: true
   },
+  tableLanguage: 'content.userList',
   tableColumnData: [
     {
       attrs: {
