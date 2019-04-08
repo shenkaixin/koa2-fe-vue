@@ -70,56 +70,42 @@ export default {
           ]
         },
         {
-          menuName: '外部链接',
-          iconName: 'el-icon-more',
-          key: '2',
-          metaList: [
-            {
-              menuName: '百度',
-              iconName: 'el-icon-document',
-              key: '2-1',
-              path: '/iframe',
-              query: '/https%3A%2F%2Fwww.baidu.com'
-            }
-          ]
-        },
-        {
           menuName: '组件',
           iconName: 'el-icon-menu',
-          key: '3',
+          key: '2',
           metaList: [
             {
               menuName: '单选框',
               iconName: 'el-icon-document',
-              key: '3-1',
+              key: '2-1',
               path: '/element-component',
               query: '/radio'
             },
             {
               menuName: '多选框',
               iconName: 'el-icon-document',
-              key: '3-2',
+              key: '2-2',
               path: '/element-component',
               query: '/checkBox'
             },
             {
               menuName: '下拉选择框',
               iconName: 'el-icon-document',
-              key: '3-3',
+              key: '2-3',
               path: '/element-component',
               query: '/selectView'
             },
             {
               menuName: '级联选择器',
               iconName: 'el-icon-document',
-              key: '3-4',
+              key: '2-4',
               path: '/element-component',
               query: '/cascader'
             },
             {
               menuName: '上传',
               iconName: 'el-icon-document',
-              key: '3-5',
+              key: '2-5',
               path: '/element-component',
               query: '/upload'
             }
@@ -128,14 +114,28 @@ export default {
         {
           menuName: '图表',
           iconName: 'el-icon-tickets',
-          key: '4',
+          key: '3',
           metaList: [
             {
               menuName: '折线图',
               iconName: 'el-icon-document',
-              key: '4-1',
+              key: '3-1',
               path: '/eCharts',
               query: '/Bld'
+            }
+          ]
+        },
+        {
+          menuName: '外部链接',
+          iconName: 'el-icon-more',
+          key: '10',
+          metaList: [
+            {
+              menuName: '百度',
+              iconName: 'el-icon-document',
+              key: '10-1',
+              path: '/iframe',
+              query: '/https%3A%2F%2Fwww.baidu.com'
             }
           ]
         }
@@ -266,7 +266,7 @@ export default {
     padding: 0;
   }
   .container {
-    height: calc(100vh - ($commonHeight * 2));
+    height: calc(100vh - #{$commonHeight * 2});
     padding: $commonPadding 0;
     &-right {
       background-color: var(--commonViewBgColor);

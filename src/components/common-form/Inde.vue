@@ -14,20 +14,31 @@
         :prop="item.model"
         :class="item.class"
       >
-        <el-input
-          v-if="item.type === 'text'"
-          v-model.trim="form[item.model]"
-          :placeholder="`请填写${item.label}`"
-          :disabled="item.disabled"
-          :maxlength="item.maxlength"
-        />
-        <el-input
-          v-else-if="item.type === 'textarea'"
-          v-model.trim="form[item.model]"
-          :placeholder="`请填写${item.label}`"
-          type="textarea"
-          resize="none"
-        />
+        <template v-if="item.type === 'text'">
+          <el-input
+            v-model.trim="form[item.model]"
+            :placeholder="`请填写${item.label}`"
+            :disabled="item.disabled"
+            :maxlength="item.maxlength"
+          />
+        </template>
+        <template v-else-if="item.type === 'textarea'">
+          <el-input
+            v-model.trim="form[item.model]"
+            :placeholder="`请填写${item.label}`"
+            type="textarea"
+            resize="none"
+          />
+        </template>
+        <template v-else-if="item.type === 'cascader'">
+          <el-cascader
+            ref="cascader"
+            v-model="form[item.model]"
+            :options="item.options"
+            :props="item.props || cascaderProps"
+            @change="handleCascaderItemChange"
+          />
+        </template>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="onSubmit">
@@ -65,7 +76,13 @@ export default {
   data() {
     return {
       form: {},
-      rules: {}
+      rules: {},
+      // 级联选择的默认key
+      cascaderProps: {
+        label: 'label',
+        value: 'value',
+        children: 'children'
+      }
     }
   },
   watch: {
@@ -80,6 +97,9 @@ export default {
     }
   },
   methods: {
+    /**
+     * 初始化
+     */
     formItemWatcher(param) {
       let form = {}
       let val = param || this.formItem || []
@@ -99,6 +119,13 @@ export default {
           return false
         }
       })
+    },
+    /**
+     * @description 级联点击以后向上传参
+     * @param val 当前val数组中的最后一个值
+     */
+    handleCascaderItemChange(val) {
+      this.$emit('handleCascaderItem', val)
     }
   }
 }

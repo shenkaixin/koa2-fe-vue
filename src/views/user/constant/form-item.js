@@ -1,3 +1,5 @@
+import PcasCode from '../../../assets/files/pcas-code.json'
+
 export default [
   {
     type: 'text',
@@ -32,6 +34,19 @@ export default [
     label: '版本号',
     model: 'verifyCode',
     initialValue: undefined,
+    rule: []
+  },
+  {
+    type: 'cascader',
+    label: '所在地',
+    model: 'address',
+    props: {
+      label: 'name',
+      value: 'code',
+      children: 'children'
+    },
+    initialValue: [],
+    options: PcasCode,
     rule: []
   }
 ]
