@@ -166,7 +166,6 @@ export default {
     },
     // 切换语言
     formatLanguage() {
-      console.log(this.$t('content.leftNav.userName'), 'ddadadada')
       this.menuList = [
         {
           menuName: this.$t('content.leftNav.userName'),
@@ -182,56 +181,42 @@ export default {
           ]
         },
         {
-          menuName: this.$t('content.leftNav.link'),
-          iconName: 'el-icon-more',
-          key: '2',
-          metaList: [
-            {
-              menuName: this.$t('content.leftNav.baidu'),
-              iconName: 'el-icon-document',
-              key: '2-1',
-              path: '/iframe',
-              query: '/https%3A%2F%2Fwww.baidu.com'
-            }
-          ]
-        },
-        {
           menuName: this.$t('content.leftNav.component'),
           iconName: 'el-icon-menu',
-          key: '3',
+          key: '2',
           metaList: [
             {
               menuName: this.$t('content.leftNav.radio'),
               iconName: 'el-icon-document',
-              key: '3-1',
+              key: '2-1',
               path: '/element-component',
               query: '/radio'
             },
             {
               menuName: this.$t('content.leftNav.checkbox'),
               iconName: 'el-icon-document',
-              key: '3-2',
+              key: '2-2',
               path: '/element-component',
               query: '/checkBox'
             },
             {
               menuName: this.$t('content.leftNav.select'),
               iconName: 'el-icon-document',
-              key: '3-3',
+              key: '2-3',
               path: '/element-component',
               query: '/selectView'
             },
             {
               menuName: this.$t('content.leftNav.cascader'),
               iconName: 'el-icon-document',
-              key: '3-4',
+              key: '2-4',
               path: '/element-component',
               query: '/cascader'
             },
             {
               menuName: this.$t('content.leftNav.upload'),
               iconName: 'el-icon-document',
-              key: '3-5',
+              key: '2-5',
               path: '/element-component',
               query: '/upload'
             }
@@ -240,14 +225,28 @@ export default {
         {
           menuName: this.$t('content.leftNav.eCharts'),
           iconName: 'el-icon-tickets',
-          key: '4',
+          key: '3',
           metaList: [
             {
               menuName: this.$t('content.leftNav.line'),
               iconName: 'el-icon-document',
-              key: '4-1',
+              key: '3-1',
               path: '/eCharts',
               query: '/Bld'
+            }
+          ]
+        },
+        {
+          menuName: this.$t('content.leftNav.link'),
+          iconName: 'el-icon-more',
+          key: '10',
+          metaList: [
+            {
+              menuName: this.$t('content.leftNav.baidu'),
+              iconName: 'el-icon-document',
+              key: '10-1',
+              path: '/iframe',
+              query: '/https%3A%2F%2Fwww.baidu.com'
             }
           ]
         }
